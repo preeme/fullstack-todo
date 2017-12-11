@@ -88,7 +88,7 @@ class TodoList extends Component {
     })
     .then(() => {
       const todos = this.state.todos.filter(todo => todo._id !== id)
-      this.setState({todos: [todos]});
+      this.setState({todos: todos});
     })
   }
 
@@ -118,8 +118,8 @@ class TodoList extends Component {
       return resp.json();
     })
     .then(updatedTodo => {
-      const todos = this.state.todos.map(t => t._id === updatedTodo._id ? {...t, completed: !t.completed} : t)
-      this.setState({todos: [todos]});
+      const todos = this.state.todos.map(t => (t._id === updatedTodo._id) ? {...t, completed: !t.completed} : t)
+      this.setState({todos: todos});
     })
   }
 

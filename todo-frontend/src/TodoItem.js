@@ -8,11 +8,10 @@ const TodoItem = ({name, completed, onDelete, onToggle}) => (
       }}
       onClick={onToggle}
     >
-
-    </span>
     {name}
+    </span>
     <span onClick={onDelete}> X </span>
   </li>
-)
+);
 
 export default TodoItem;
