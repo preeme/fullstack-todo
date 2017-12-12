@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import TodoForm from './TodoForm'
 import TodoItem from './TodoItem'
 import * as apiCalls from './api';
-const APIURL = '/api/todos/';
 
 
 class TodoList extends Component {
@@ -37,7 +36,7 @@ class TodoList extends Component {
 
   async toggleTodo(todo) {
     let updatedTodo = await apiCalls.toggleTodo(todo);
-    
+
     const todos = this.state.todos.map(t => (t._id === updatedTodo._id) ? {...t, completed: !t.completed} : t)
     this.setState({todos: todos});
   }
